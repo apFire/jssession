@@ -1,0 +1,123 @@
+Hoisting
+---------------------------------------------------
+console.log(a);
+b();
+
+var a = 'Some String';
+
+function b() {
+	console.log('Some more string')
+}
+
+
+Moves lexical context to top of code. Reserves memory space. 
+---------------------------------------------------
+
+Function Invocation
+---------------------------------------------------
+function b() {
+	console.log('B running');
+}
+
+function a() {
+	b();
+	console.log('A running');
+}
+
+a();
+
+//Output
+B running 
+A running
+
+
+All function call are added to a Execution stack and are not invoked untill previous function ends its routine. next function to execute is pulled up from call stack
+-----------------------------------------------------
+
+Scope chain
+
+function b() {
+	console.log(x);
+};
+
+function c() {
+	var x = "inside C";
+	b();
+};
+
+var x = "Just Global";
+c();
+
+
+-----------------------------------------------------
+
+Closures
+
+function greet(say) {
+	return function(to) {
+		console.log(say + ' ' + to);	
+	}
+}
+
+greet('hi')('all');
+
+
+
+function buildFunction() {
+	var arr = [];
+	for (var i = 0; i < 3; i++) {
+		arr.push(function() {
+				console.log(i);
+			});
+	}
+	return arr;	
+}
+var fs = buildFunction();
+
+fs[0]();
+fs[1]();
+fs[2]();
+}
+
+
+var fs = (function buildFunction() {
+	var arr = [];
+	for (var i = 0; i < 3; i++) {
+		arr.push((function(j) {
+				return function() {
+					console.log(j);
+				}
+			})(i));
+	}
+	return arr;	
+})();
+
+fs[0]();
+fs[1]();
+fs[2]();
+
+
+-----------------------------------------------------
+callback
+
+function seywhendone() {
+	var greeting = 'there some thing nice';
+	setTimeout(function() {
+		console.log(greeting);	
+	}, 3000)
+}
+saywhendone();
+
+
+
+
+function dowhendone(callback) {
+	for (var i=0; i<10; i++) {
+		console.log(i);			
+	}
+	callback(i);
+}
+
+dowhendone(function(gotthat){
+	console.log('hey i got ' + gotthat);
+});

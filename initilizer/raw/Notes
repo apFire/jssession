@@ -1,0 +1,40 @@
+Execution context [Base/ Global] - creates Global Object and this
+Global Object - Window object / Equivalent
+this - current Execution Context
+Global - Not inside function
+Outer Environment
+Code attached to Execution Context
+
+Creation of Execution Context - Created in two phases
+	1. Global Execution context
+	2. Looks for variables and function and setup 		memory block.
+	3. Execution Phase  
+
+Hoisting - Moves lexical context to top of code.
+Hoisting does not move assignments. but creates a paceholder. with functions entire code is being referenced.
+
+Function invocation - Running a function
+Execution Stack
+
+Variable Environment - where variable exists / Scope is limited to Execution Context. var keyword binds variable to Execution Context. Without var keyword variable will bind to Global context.
+
+Scope chain - referance variables based on where it is placed lexically. 
+
+Event queue - Holds list of events or notifications that should trigger some JavaScript code. 
+	1. Complete all Execution context
+	2. complete Events queue
+	3. complete Data queue
+
+1. Undefined
+2. Null
+3. Boolean
+4. Number
+5. String
+6. Symbol
+
+object and functions - Everything is object. Collection of values and names. [primitive | object ] - property, Function - methods 
+
+Functions are objects - first class functions
+
+
+

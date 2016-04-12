@@ -1,0 +1,17 @@
+<html>
+	<head></head>
+	<body>
+		<script>
+			isolatedScope();
+			function isolatedScope() {
+				var aVariable = "someString";
+				innerIsolation();
+				function innerIsolation() {
+					console.log(typeof aVariable);
+				}		
+			}
+			console.log(typeof aVariable);
+		</script>	
+	</body>
+</html>
+

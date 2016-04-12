@@ -1,0 +1,62 @@
+<div class="panel panel-primary">
+	<div class="panel-body">
+		<h3>Variables and Scopes</h3>
+				<div class="row">
+					<div class="col-md-12">
+				<pre>
+someFunction();
+function someFunction() {
+    var aVariable2 = "Some String";
+}
+document.getElementById("demo-1").innerHTML = "The aVariable is accessed globaly " + typeof aVariable2;
+				</pre>
+					</div>
+			</div>
+		<div class="row">
+		<div class="col-md-12">
+			<div class="well"> 
+				<p id="demo-1"></p>
+				<script>
+				someFunction();
+				function someFunction() {
+				    var aVariable2 = "Some String";
+				}
+				document.getElementById("demo-1").innerHTML = "The aVariable is accessed globaly : " + typeof aVariable2;
+				</script>
+			</div>
+		</div>
+		</div>
+	</div>
+</div>
+
+
+<div class="panel panel-primary">
+	<div class="panel-body">
+		<h3>Variables and Scopes</h3>
+				<div class="row">
+					<div class="col-md-12">
+				<pre>
+someFunction();
+function someFunction() {
+    aVariable = "Some String";
+}
+document.getElementById("demo-2").innerHTML = "The type of aVariable is " + typeof aVariable;
+				</pre>
+					</div>
+				</div>
+		<div class="row">
+			<div class="col-md-12">
+				<div class="well"> 
+					<p id="demo-2"></p>
+					<script>
+					someFunction();
+					function someFunction() {
+					    aVariable1 = "Some String";
+					}
+					document.getElementById("demo-2").innerHTML = "The type of aVariable is " + typeof aVariable1;
+					</script>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
